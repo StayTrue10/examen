@@ -52,6 +52,7 @@
             <div>
                 <label for="factura">Factura</label>
                 <select wire:model="factura" class="form-control" id="factura">
+                    <option value="0">Requiere factura</option>
                     <option value="1">Si</option>
                     <option value="2">No</option>
                 </select>
