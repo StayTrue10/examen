@@ -5,3 +5,4 @@ Este es mi proyecto del examen, para inicarlo solo hay que clonar el repositorio
 la API hay que correrla en el puerto 8001
 las credenciales para el panel del admin son admin@admin.com, password.
 la ruta para iniciar session es /login
+(admin = al usuario interno)
