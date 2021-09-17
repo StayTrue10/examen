@@ -3,3 +3,4 @@
 ## Proyecto de examen
 Este es mi proyecto del examen, para inicarlo solo hay que clonar el repositorio e instalar las dependencias de composer
 la API hay que correrla en el puerto 8001
+las credenciales para el panel del admin son admin@admin.com, password.
