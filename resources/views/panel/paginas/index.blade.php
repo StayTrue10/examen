@@ -1,5 +1,5 @@
 @extends('panel.layouts.app')
-@section('title', 'Main page')
+@section('title', 'Reservaciones')
 @section('content')
 <div class="wrapper wrapper-content animated fadeInRight">
     <div class="row">

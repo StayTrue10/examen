@@ -8,7 +8,7 @@
                 <form method="POST" action="{{ route('logout') }}">
                     @csrf
                     <i class="fa fa-sign-out"></i>
-                    <button class="btn btn-link">Log out</button>
+                    <button class="btn btn-link">Cerrar sesión</button>
                 </form>
             </li>
         </ul>

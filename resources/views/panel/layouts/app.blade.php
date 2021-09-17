@@ -3,12 +3,10 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>INSPINIA - @yield('title') </title>
-
+    <title>Panel Admin Kabir - @yield('title') </title>
     <link rel="stylesheet" href="{!! asset('css/vendor.css') !!}" />
     <link rel="stylesheet" href="{!! asset('css/app.css') !!}" />
 @livewireStyles
-
 </head>
 <body>
   <!-- Wrapper-->
@@ -31,6 +29,5 @@
 @livewireScripts
 @section('scripts')
 @show
-
 </body>
 </html>

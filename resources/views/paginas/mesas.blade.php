@@ -1,7 +1,4 @@
 @extends('layouts.default')
-{{-- @section('titulo', 'Home titulo')
-@section('descripcion', 'Home descripcion')
-@section('keywords', 'Home keywords') --}}
 @section('styles')
 {{-- meta tags --}}
 
@@ -13,5 +10,4 @@
 </div>
 @endsection
 @section('scripts')
-
 @endsection

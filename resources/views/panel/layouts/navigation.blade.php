@@ -16,10 +16,6 @@
             <li class="{{ isActiveRoute('main') }}">
                 <a href="{{ route('main') }}"><i class="fa fa-th-large"></i> <span class="nav-label">Hacer reservación</span></a>
             </li>
-            {{-- <li class="{{ isActiveRoute('minor') }}">
-                <a href="{{ route('minor') }}"><i class="fa fa-th-large"></i> <span class="nav-label">Minor view</span> </a>
-            </li> --}}
         </ul>
-
     </div>
 </nav>

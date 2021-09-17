@@ -4,29 +4,26 @@
         @if(session()->has('mensaje'))
             <h4 class="text-center mb-5 fw-light text-danger">{{ session('mensaje')}}</h4>
         @endif
-        {{var_dump($response)}}
         <form>
             @if(Auth::check())
-
-            <label>Folio</label>
+                <label>Folio</label>
             @else
-
-            <label>RFC</label>
+                <label>RFC</label>
             @endif
             <div class="row">
                 @if(Auth::check())
-                <div class="col-sm-6">
-                    <input wire:model="folio" type="text" class="form-control" id="folio" placeholder="Folio">
-                    @error('folio') <small class="text-danger py-1">{{ $message }}</small> @enderror
-                </div>
-                <div class="col-sm-6">
-                    <button wire:click.prevent="buscar()" class="btn btn-primary btn-login text-uppercase fw-bold" type="submit">Buscar</button>
-                </div>
+                    <div class="col-sm-6">
+                        <input wire:model="folio" type="text" class="form-control" id="folio" placeholder="Folio">
+                        @error('folio') <small class="text-danger py-1">{{ $message }}</small> @enderror
+                    </div>
+                    <div class="col-sm-6">
+                        <button wire:click.prevent="buscar()" class="btn btn-primary btn-login text-uppercase fw-bold" type="submit">Buscar</button>
+                    </div>
                 @else
-                <div class="col-sm-12">
-                    <input wire:model="rfc" type="text" class="form-control" id="rfc" placeholder="RFC">
-                    @error('rfc') <small class="text-danger py-1">{{ $message }}</small> @enderror
-                </div>
+                    <div class="col-sm-12">
+                        <input wire:model="rfc" type="text" class="form-control" id="rfc" placeholder="RFC">
+                        @error('rfc') <small class="text-danger py-1">{{ $message }}</small> @enderror
+                    </div>
                 @endif
             </div>
             <br>
