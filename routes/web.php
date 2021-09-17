@@ -13,11 +13,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/registro', function () {
+Route::get('/', function () {
     return view('paginas.reservaciones');
 });
 Route::get('/reservaciones', function () {
     return view('paginas.mesas');
-});
+})->name('reservaciones');
 Route::get('/dash', 'HomeController@index')->name('main')->middleware('auth');
 Route::get('/minor', 'HomeController@minor')->name('minor')->middleware('auth');;

@@ -32,7 +32,7 @@ class Reservacion extends Component {
     public function guardar() {
         $validatedData = $this->validate();
         $client = new \GuzzleHttp\Client();
-        $response = $client->request('POST', env('API_URL').'/registro', [
+        $response = $client->request('POST', env('API_URL').'/registrar', [
             'form_params' => [
                 'nombre' => $this->nombre,
                 'apellido' => $this->apellido,
@@ -43,7 +43,6 @@ class Reservacion extends Component {
                 'usuario' => $this->usuario,
             ]
         ]);
-        $folio = $response->getContent()->getBody();
         session()->flash('mensaje', '¡Registro completado!');
         $this->limpiarCampos();
     }

@@ -4,7 +4,7 @@
         @if(session()->has('mensaje'))
             <h4 class="text-center mb-5 fw-light text-danger">{{ session('mensaje')}}</h4>
         @endif
-        {{var_dump($folio)}}
+        {{var_dump($response)}}
         <form>
             @if(Auth::check())
 
@@ -23,7 +23,7 @@
                     <button wire:click.prevent="buscar()" class="btn btn-primary btn-login text-uppercase fw-bold" type="submit">Buscar</button>
                 </div>
                 @else
-                <div class="col-sm-6">
+                <div class="col-sm-12">
                     <input wire:model="rfc" type="text" class="form-control" id="rfc" placeholder="RFC">
                     @error('rfc') <small class="text-danger py-1">{{ $message }}</small> @enderror
                 </div>
@@ -33,7 +33,7 @@
             <div>
                 <label for="mesa">Escoger mesa</label>
                 <select wire:model="mesa" class="form-control" id="mesa">
-                    <option selected>Selecciona una</option>
+                    <option selected value="0">Selecciona una</option>
                     @foreach($filtros['mesas'] as $mesa)
                         <option value="{{$mesa['id']}}">{{$mesa['nombre'].' - '.$mesa['tipo'].' - '.$mesa['restaurante']}}</option>
                     @endforeach
@@ -44,7 +44,7 @@
             <div>
                 <label for="horario">Horario</label>
                 <select wire:model="horario" class="form-control" id="horario">
-                    <option selected>Selecciona una</option>
+                    <option selected value='0'>Selecciona una</option>
                     @foreach($filtros['horarios'] as $horario)
                         <option value="{{$horario['id']}}">{{'De '.$horario['inicio'].' PM a '.$horario['final'].' PM'}}</option>
                     @endforeach
@@ -59,6 +59,11 @@
                     <option value="2">No</option>
                 </select>
                 @error('apellido') <small class="text-danger py-1">{{ $message }}</small> @enderror
+            </div>
+            <br>
+            <div class="col-sm-12">
+                <input wire:model="estatus" type="hidden" id="estatus">
+                @error('estatus') <small class="text-danger py-1">{{ $message }}</small> @enderror
             </div>
             <br>
             <div class="d-grid">

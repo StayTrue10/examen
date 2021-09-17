@@ -44,5 +44,6 @@
                 <button wire:click.prevent="guardar()" class="btn btn-primary btn-login text-uppercase fw-bold" type="submit">Registarse</button>
             </div>
         </form>
+        <a class="btn btn-link" href="{{route('reservaciones')}}">Reservar mesa</a>
     </div>
 </div>

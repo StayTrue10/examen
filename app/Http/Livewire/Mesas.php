@@ -7,12 +7,16 @@ use App\Traits\APITrait;
 
 class Mesas extends Component {
     use APITrait;
-    public $filtros, $rfc, $mesa, $horario, $factura, $reservacion, $folio;
+    public $filtros, $rfc, $mesa, $horario, $factura, $reservacion, $folio, $estatus, $response;
     protected $rules = [
         'rfc' => 'required|exists:usuarios,rfc',
         'mesa' => 'required',
         'horario' => 'required',
         'factura' => 'required',
+        'estatus' => 'unique:reservaciones,estatus'
+    ];
+    protected $messages = [
+        'estatus.unique' => 'Esta mesa y horario no esta disponible, seleccione otras opciones por favor.',
     ];
     // Validación de cada input
     public function updated($input) {
@@ -20,6 +24,7 @@ class Mesas extends Component {
     }
     public function render() {
         $this->filtros = $this->consultar(env('API_URL').'/filtros');
+        $this->estatus = $this->mesa.','.$this->horario.','.($this->horario+1);
         return view('livewire.mesas');
     }
     public function guardar() {
@@ -39,7 +44,7 @@ class Mesas extends Component {
     public function actualizar() {
         $validatedData = $this->validate();
         $client = new \GuzzleHttp\Client();
-        $response = $client->request('POST', env('API_URL').'/reservacion'.'/'.$this->rfc, [
+        $response = $client->request('POST', env('API_URL').'/reservacion'.'/'.$this->folio, [
             'form_params' => [
                 'mesa' => $this->mesa,
                 'horario' => $this->horario,
